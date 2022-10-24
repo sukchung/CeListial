@@ -17,12 +17,14 @@
                             <th>Name</th>
                             <th>Number of tasks</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             {% for project in projects %}
                                 <td>{{ project.name }}</td>
                             {% endfor %}
                         </tr>
-                    </thead>
+                    </tbody>
                 </table>
             {% endif %}
         </div>
