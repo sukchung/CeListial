@@ -8,8 +8,8 @@ def user_login(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
+            username = form.cleaned_data["username"]
+            password = form.cleaned_data["password"]
             user = authenticate(
                 request,
                 username=username,
@@ -35,9 +35,9 @@ def signup(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            password_confirmation = form.cleaned_data['password_confirmation']
+            username = form.cleaned_data["username"]
+            password = form.cleaned_data["password"]
+            password_confirmation = form.cleaned_data["password_confirmation"]
             if password == password_confirmation:
                 user = User.objects.create_user(
                     username,
@@ -52,4 +52,4 @@ def signup(request):
     context = {
         "form": form,
     }
-    return render(request, "accounts/signup.html", context)
+    return render(request, "registration/signup.html", context)

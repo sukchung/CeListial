@@ -20,7 +20,7 @@
                                 <td>{{ task.name }}</td>
                                 <td>{{ task.start_date }}</td>
                                 <td>{{ task.due_date }}</td>
-                                <td>{{ task.is_completed|yesno:"yes,no" }}</td>
+                                <td>{{ task.is_completed|yesno:"Done, " }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>

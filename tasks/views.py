@@ -3,8 +3,8 @@ from tasks.models import Task
 from tasks.forms import TaskForm
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
-@ login_required
+
+@login_required
 def create_task(request):
     if request.method == "POST":
         form = TaskForm(request.POST)
