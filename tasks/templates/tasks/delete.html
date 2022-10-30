@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Delete - {{ task.name }}
+{% endblock title %}
+{% block content %}
+    <main>
+        <div class="center-box2">
+            <h1>Are you sure you want to delete?</h1>
+            <div class="center-text">
+                <form class="wrapper" method="post" action="">
+                    {% csrf_token %}
+                    <input class="button-style" type="submit" name="Confirm">
+                </form>
+                <button class="button-style wrapper" style="width: 129px;">
+                    <a href={% url 'show_my_tasks' %}>Cancel</a>
+                </button>
+            </div>
+        </div>
+    </main>
+{% endblock content %}

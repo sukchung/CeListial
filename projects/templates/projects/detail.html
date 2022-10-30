@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
+{% block title %}
+    {{ project.name }} - Tracker
+{% endblock title %}
 {% block content %}
     <main>
-        <div>
+        <div class="center-box4">
             <h1>{{ project.name }}</h1>
-            <p>{{ project.description }}</p>
-            <h2>Tasks</h2>
-            <p>
-                <a href="{% url 'create_task' %}">Create a new task</a>
-            </p>
+            <p style="font-style: italic;" class="center-text">{{ project.description }}</p>
+            <h2 class="center-text">Tasks</h2>
             {% if project.tasks.all|length != 0 %}
-                <table>
+                <table class="center">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -25,16 +25,19 @@
                             <tr>
                                 <td>{{ task.name }}</td>
                                 <td>{{ task.assignee }}</td>
-                                <td>{{ task.start_date }}</td>
-                                <td>{{ task.due_date }}</td>
-                                <td>{{ task.is_completed|yesno:"yes,no" }}</td>
+                                <td>{{ task.start_date|date:"D, N j, Y" }}</td>
+                                <td>{{ task.due_date|date:"D, N j, Y" }}</td>
+                                <td class="center-text">{{ task.is_completed|yesno:"Yes,No" }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
                 </table>
             {% else %}
-                <p>This project has no tasks</p>
+                <p class="center-text">ଘ(੭ ᐛ )━☆ﾟ.*･｡ﾟ This project has no tasks ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆</p>
             {% endif %}
+            <p class="center-text">
+                <a class="button-link" href={% url 'create_task' %}>Create a new task</a>
+            </p>
         </div>
     </main>
 {% endblock content %}

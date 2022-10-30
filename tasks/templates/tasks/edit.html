@@ -1,19 +1,16 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Log in to Tracker
+    Edit - {{ task.name }}
 {% endblock title %}
 {% block content %}
     <main>
         <div class="center-box">
-            <h1>Log in</h1>
+            <h1>Edit your task</h1>
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <p>
-                    Don't have an account? Sign up <a class="purpletext hoverline" href={% url 'signup' %}>here</a>!
-                </p>
-                <button class="button-style">Log in</button>
+                <button class="button-style">Update</button>
             </form>
         </div>
     </main>

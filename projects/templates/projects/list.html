@@ -1,16 +1,19 @@
 {% extends "base.html" %}
 
+{% block title %}
+    Tracker
+{% endblock title %}
 {% block content %}
     <main>
-        <div>
-            <h1>My Projects</h1>
-            <p>
-                <a href={% url 'create_project' %}>Create a new project</a>
+        <div class="center-box2">
+            <h1 class="center-text">My Projects</h1>
+            <p class="center-text">
+                <a class="button-link" href={% url 'create_project' %}>Create a new project</a>
             </p>
             {% if projects|length == 0 %}
-                <p>You are not assigned to any projects</p>
+                <p class="p-padding center-text">You are not assigned to any projects ｡･:*:･ﾟ★</p>
             {% else %}
-                <table>
+                <table class="center">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -21,9 +24,10 @@
                         {% for project in projects %}
                             <tr>
                                 <td>
-                                    <a href="{% url 'show_project' project.pk %}">{{ project.name }}</a>
+                                    <a class="whitetext hoverline"
+                                       href="{% url 'show_project' project.pk %}">{{ project.name }}</a>
                                 </td>
-                                <td>{{ project.tasks.all|length }}</td>
+                                <td class="center-text">{{ project.tasks.all|length }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
