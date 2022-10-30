@@ -1,26 +1,24 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Log in to Tracker
+    Edit Project
 {% endblock title %}
 {% block content %}
     <main>
         <div class="box">
             <b class="circle1"></b>
             <b class="circle2"></b>
-            <b class="square1"></b>
-            <b class="triangle1"></b>
         </div>
         <div class="center-box">
-            <h1>Log in</h1>
-            <form method="post">
+            <h1>Edit your project</h1>
+            <form class="wrapper" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <p>
-                    Don't have an account? Sign up <a class="purpletext hoverline" href={% url 'signup' %}>here</a>!
-                </p>
-                <button class="button-style">Log in</button>
+                <button class="button-style" style="margin-right: 2px;">Update</button>
             </form>
+            <button class="button-style wrapper" style="width: 129px;">
+                <a href={% url 'list_projects' %}>Cancel</a>
+            </button>
         </div>
     </main>
 {% endblock content %}

@@ -37,3 +37,35 @@ def create_project(request):
         "form": form,
     }
     return render(request, "projects/create.html", context)
+
+
+@login_required
+def edit_project(request, pk):
+    project = get_object_or_404(Project, pk=pk)
+
+    if request.method == "POST":
+        form = ProjectForm(request.POST, instance=project)
+        if form.is_valid():
+            form.save()
+            return redirect("list_projects")
+    else:
+        form = ProjectForm(instance=project)
+    context = {
+        "form": form,
+        "project": project,
+    }
+    return render(request, "projects/edit.html", context)
+
+
+@login_required
+def delete_project(request, pk):
+    project = get_object_or_404(Project, pk=pk)
+
+    if request.method == "POST":
+        project.delete()
+        return redirect("list_projects")
+
+    context = {
+        "project": project,
+    }
+    return render(request, "projects/delete.html", context)

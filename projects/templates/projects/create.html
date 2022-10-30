@@ -5,13 +5,20 @@
 {% endblock title %}
 {% block content %}
     <main>
+        <div class="box">
+            <b class="circle3"></b>
+            <b class="crescent1"></b>
+        </div>
         <div class="center-box">
             <h1>Create a new project</h1>
-            <form method="post">
+            <form class="wrapper" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button class="button-style">Create</button>
+                <button class="button-style" style="margin-right: 2px;">Create</button>
             </form>
+            <button class="button-style wrapper" style="width: 129px;">
+                <a href={% url 'list_projects' %}>Cancel</a>
+            </button>
         </div>
     </main>
 {% endblock content %}

@@ -1,17 +1,24 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Edit - {{ task.name }}
+    Edit Task
 {% endblock title %}
 {% block content %}
     <main>
+        <div class="box">
+            <b class="circle1"></b>
+            <b class="circle2"></b>
+        </div>
         <div class="center-box">
             <h1>Edit your task</h1>
-            <form method="post">
+            <form class="wrapper" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button class="button-style">Update</button>
+                <button class="button-style" style="margin-right: 2px;">Update</button>
             </form>
+            <button class="button-style wrapper" style="width: 129px;">
+                <a href={% url 'show_my_tasks' %}>Cancel</a>
+            </button>
         </div>
     </main>
 {% endblock content %}

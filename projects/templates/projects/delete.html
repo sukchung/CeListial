@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Delete Task
+    Delete Project
 {% endblock title %}
 {% block content %}
     <main>
@@ -11,14 +11,14 @@
         </div>
         <div class="center-box2">
             <h1>Are you sure you want to delete</h1>
-            <h2 class="center-text">"{{ task.name }}"?</h2>
+            <h2 class="center-text">"{{ project.name }}"?</h2>
             <div class="center-text">
                 <form class="wrapper" method="post" action="">
                     {% csrf_token %}
                     <input class="button-style" type="submit" name="Confirm">
                 </form>
                 <button class="button-style wrapper" style="width: 129px;">
-                    <a href={% url 'show_my_tasks' %}>Cancel</a>
+                    <a href={% url 'list_projects' %}>Cancel</a>
                 </button>
             </div>
         </div>

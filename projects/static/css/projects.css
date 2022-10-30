@@ -103,7 +103,7 @@ h1 {
 .center-box4 {
     width: 60%;
     margin: 5.5% auto;
-    padding: 10px 10px 10px 40px;
+    padding: 10px 10px 10px 10px;
     background-color: #282940;
     color: #fff;
     border-radius: 10px;
@@ -119,10 +119,15 @@ a {
 th, td {
 	padding: 20px;
 	color: #fff;
+    text-align: center;
 }
 
 .p-padding {
     padding: 15px;
+}
+
+.updelpadding {
+    padding: 2px;
 }
 
 .purpletext {
@@ -130,9 +135,17 @@ th, td {
     font-weight: bolder;
 }
 
+.purpletext2 {
+    color: #c1c3f4;
+}
+
 .whitetext {
     color: #fff;
-    font-weight:bolder;
+    font-weight: bolder;
+}
+
+.whitetext2 {
+    color: #fff;
 }
 
 .hoverline {
@@ -159,8 +172,8 @@ th, td {
 }
 
 table.center {
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .center-text {
@@ -188,6 +201,10 @@ table.center {
 .button-link:hover {
     background: #6367d4cd;
     color: #fff;
+}
+
+.margin-button {
+    margin-right: 2px;
 }
 
 input[type=text],
@@ -283,12 +300,40 @@ box {
     animation: moveX 15.45s ease-in-out 0s infinite alternate, moveY 6.4s ease-in-out 0s infinite alternate;
 }
 
+.circle3 {
+    display: block;
+    z-index: -1;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #4453c9e6;
+    position: absolute;
+    -webkit-animation: moveX 20.45s ease-in-out 0s infinite alternate, moveY 6.4s ease-in-out 0s infinite alternate;
+    -moz-animation: moveX 20.45s ease-in-out 0s infinite alternate, moveY 6.4s ease-in-out 0s infinite alternate;
+    -o-animation: moveX 20.04s ease-in-out 0s infinite alternate, moveY 6.4s ease-in-out 0s infinite alternate;
+    animation: moveX 20.45s ease-in-out 0s infinite alternate, moveY 6.4s ease-in-out 0s infinite alternate;
+}
+
+.crescent1 {
+    display: block;
+    z-index: -1;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    box-shadow: 15px 15px 0 0 #7a9fbf97;
+    position: absolute;
+    -webkit-animation: moveX 12.45s ease-in-out 0s infinite alternate, moveY 6.4s ease-in-out 0s infinite alternate;
+    -moz-animation: moveX 12.45s ease-in-out 0s infinite alternate, moveY 6.4s ease-in-out 0s infinite alternate;
+    -o-animation: moveX 12.04s ease-in-out 0s infinite alternate, moveY 6.4s ease-in-out 0s infinite alternate;
+    animation: moveX 12.45s ease-in-out 0s infinite alternate, moveY 6.4s ease-in-out 0s infinite alternate;
+}
+
 .square1 {
     display: block;
     z-index: -1;
     width: 45px;
     height: 45px;
-    background-color:#657d8caf;
+    background-color: #657d8caf;
     position: absolute;
     -webkit-animation: moveX 12.34s linear 0s infinite alternate, moveY 15.06s linear 0s infinite alternate, spin 40000ms linear 0s infinite alternate;
     -moz-animation: moveX 12.34s linear 0s infinite alternate, moveY 15.06s linear 0s infinite alternate, spin 40000ms linear 0s infinite alternate;
@@ -303,7 +348,7 @@ box {
     border-top: 40px solid transparent;
     border-bottom: 40px solid transparent;
     border-left: 75px solid #3e4c59bb;
-      position: absolute;
+    position: absolute;
     -webkit-animation: moveX 18.74s linear 0s infinite alternate, moveY 25.06s linear 0s infinite alternate, spin 75300ms linear 0s infinite alternate;
     -moz-animation: moveX 18.34s linear 0s infinite alternate, moveY 25.06s linear 0s infinite alternate, spin 75300ms linear 0s infinite alternate;
     -o-animation: moveX 18.34s linear 0s infinite alternate, moveY 20.06s linear 0s infinite alternate, spin 45300ms linear 0s infinite alternate;
@@ -311,33 +356,33 @@ box {
 }
 
 @-webkit-keyframes moveX {
-  from { left: 5%; } to { left: 90%; }
+  from { left: -5%; } to { left: 90%; }
 }
 
 @-moz-keyframes moveX {
-  from { left: 5%; } to { left: 90%; }
+  from { left: -5%; } to { left: 90%; }
 }
 
 @-o-keyframes moveX {
-  from { left: 5%; } to { left: 90%; }
+  from { left: -5%; } to { left: 90%; }
 }
 
 @keyframes moveX {
-  from { left: 5%; } to { left: 90%; }
+  from { left: -5%; } to { left: 90%; }
 }
 
 @-webkit-keyframes moveY {
-  from { top: 10%; } to { top: 85%; }
+  from { top: -10%; } to { top: 85%; }
 }
 
 @-moz-keyframes moveY {
-  from { top: 10%; } to { top: 85%; }
+  from { top: -10%; } to { top: 85%; }
 }
 
 @-o-keyframes moveY {
-  from { top: 10%; } to { top: 85%; }
+  from { top: -10%; } to { top: 85%; }
 }
 
 @keyframes moveY {
-  from { top: 10%; } to { top: 85%; }
+  from { top: -10%; } to { top: 85%; }
 }

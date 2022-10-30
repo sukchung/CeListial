@@ -5,6 +5,12 @@
 {% endblock title %}
 {% block content %}
     <main>
+        <div class="box">
+            <b class="circle1"></b>
+            <b class="circle2"></b>
+            <b class="circle3"></b>
+            <b class="crescent1"></b>
+        </div>
         <div class="center-box3">
             <h1 class="center-text">My Tasks</h1>
             {% if tasks|length != 0 %}
@@ -12,23 +18,38 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Start date</th>
-                            <th>Due date</th>
-                            <th>Is completed</th>
-                            <th>Edit task</th>
+                            <th>Start Date</th>
+                            <th>Due Date</th>
+                            <th>Completion</th>
+                            <th>Edit Task</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for task in tasks %}
                             <tr>
-                                <td>{{ task.name }}</td>
-                                <td>{{ task.start_date|date:"D, N j, Y" }}</td>
-                                <td>{{ task.due_date|date:"D, N j, Y" }}</td>
-                                <td class="center-text">{{ task.is_completed|yesno:"Done,No" }}</td>
-                                <td>
-                                    <a class="purpletext" href="{% url 'edit_task' task.pk %}">Update</a>
-                                    <a class="purpletext" href="{% url 'delete_task' task.pk %}">Delete</a>
-                                </td>
+                                {% if task.is_completed == False %}
+                                    <td>{{ task.name }}</td>
+                                    <td>{{ task.start_date|date:"D, N j, Y" }}</td>
+                                    <td>{{ task.due_date|date:"D, N j, Y" }}</td>
+                                    <td class="center-text">{{ task.is_completed|yesno:"Done,No" }}</td>
+                                    <td>
+                                        <a class="whitetext2 hoverline updelpadding"
+                                           href="{% url 'edit_task' task.pk %}">Update</a>
+                                        <a class="whitetext2 hoverline updelpadding"
+                                           href="{% url 'delete_task' task.pk %}">Delete</a>
+                                    </td>
+                                {% else %}
+                                    <td class="purpletext2">{{ task.name }}</td>
+                                    <td class="purpletext2">{{ task.start_date|date:"D, N j, Y" }}</td>
+                                    <td class="purpletext2">{{ task.due_date|date:"D, N j, Y" }}</td>
+                                    <td class="center-text purpletext2">{{ task.is_completed|yesno:"Done,No" }}</td>
+                                    <td>
+                                        <a class="purpletext2 hoverline updelpadding"
+                                           href="{% url 'edit_task' task.pk %}">Update</a>
+                                        <a class="purpletext2 hoverline updelpadding"
+                                           href="{% url 'delete_task' task.pk %}">Delete</a>
+                                    </td>
+                                {% endif %}
                             </tr>
                         {% endfor %}
                     </tbody>

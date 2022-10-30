@@ -1,33 +1,50 @@
 {% extends "base.html" %}
 
 {% block title %}
-    {{ project.name }} - Tracker
+    My Project - {{ project.name }}
 {% endblock title %}
 {% block content %}
     <main>
+        <div class="box">
+            <b class="circle1"></b>
+            <b class="circle2"></b>
+            <b class="circle3"></b>
+            <b class="crescent1"></b>
+        </div>
         <div class="center-box4">
             <h1>{{ project.name }}</h1>
             <p style="font-style: italic;" class="center-text">{{ project.description }}</p>
             <h2 class="center-text">Tasks</h2>
+            <p class="center-text">
+                <a class="button-link" href={% url 'create_task' %}>Create a new task</a>
+            </p>
             {% if project.tasks.all|length != 0 %}
                 <table class="center">
                     <thead>
                         <tr>
                             <th>Name</th>
                             <th>Assignee</th>
-                            <th>Start date</th>
-                            <th>Due date</th>
-                            <th>Is completed</th>
+                            <th>Start Date</th>
+                            <th>Due Date</th>
+                            <th>Completion</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for task in project.tasks.all %}
                             <tr>
-                                <td>{{ task.name }}</td>
-                                <td>{{ task.assignee }}</td>
-                                <td>{{ task.start_date|date:"D, N j, Y" }}</td>
-                                <td>{{ task.due_date|date:"D, N j, Y" }}</td>
-                                <td class="center-text">{{ task.is_completed|yesno:"Yes,No" }}</td>
+                                {% if task.is_completed == False %}
+                                    <td>{{ task.name }}</td>
+                                    <td>{{ task.assignee }}</td>
+                                    <td>{{ task.start_date|date:"D, N j, Y" }}</td>
+                                    <td>{{ task.due_date|date:"D, N j, Y" }}</td>
+                                    <td class="center-text">{{ task.is_completed|yesno:"Yes,No" }}</td>
+                                {% else %}
+                                    <td class="purpletext2">{{ task.name }}</td>
+                                    <td class="purpletext2">{{ task.assignee }}</td>
+                                    <td class="purpletext2">{{ task.start_date|date:"D, N j, Y" }}</td>
+                                    <td class="purpletext2">{{ task.due_date|date:"D, N j, Y" }}</td>
+                                    <td class="center-text purpletext2">{{ task.is_completed|yesno:"Yes,No" }}</td>
+                                {% endif %}
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -35,9 +52,6 @@
             {% else %}
                 <p class="center-text">ଘ(੭ ᐛ )━☆ﾟ.*･｡ﾟ This project has no tasks ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆</p>
             {% endif %}
-            <p class="center-text">
-                <a class="button-link" href={% url 'create_task' %}>Create a new task</a>
-            </p>
         </div>
     </main>
 {% endblock content %}

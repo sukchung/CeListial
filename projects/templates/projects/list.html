@@ -4,6 +4,12 @@
     Tracker
 {% endblock title %}
 {% block content %}
+    <div class="box">
+        <b class="circle1"></b>
+        <b class="circle2"></b>
+        <b class="circle3"></b>
+        <b class="crescent1"></b>
+    </div>
     <main>
         <div class="center-box2">
             <h1 class="center-text">My Projects</h1>
@@ -17,17 +23,24 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Number of tasks</th>
+                            <th>Number of Tasks</th>
+                            <th>Edit Project</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for project in projects %}
                             <tr>
                                 <td>
-                                    <a class="whitetext hoverline"
+                                    <a class="purpletext2 hoverline"
                                        href="{% url 'show_project' project.pk %}">{{ project.name }}</a>
                                 </td>
                                 <td class="center-text">{{ project.tasks.all|length }}</td>
+                                <td>
+                                    <a class="whitetext2 hoverline updelpadding"
+                                       href="{% url 'edit_project' project.pk %}">Update</a>
+                                    <a class="whitetext2 hoverline updelpadding"
+                                       href="{% url 'delete_project' project.pk %}">Delete</a>
+                                </td>
                             </tr>
                         {% endfor %}
                     </tbody>
