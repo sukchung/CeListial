@@ -373,6 +373,51 @@ box {
     animation: moveX 18.34s linear 0s infinite alternate, moveY 20.06s linear 0s infinite alternate, spin 45300ms linear 0s infinite alternate;
 }
 
+#space-invader2 {
+    display: block;
+    z-index: -1;
+    box-shadow: 0 0 0 1em  rgba(84, 101, 211, 0.734),
+    0 1em 0 1em  rgba(84, 101, 211, 0.734),
+    -2.5em 1.5em 0 .5em  rgba(84, 101, 211, 0.734),
+    2.5em 1.5em 0 .5em  rgba(84, 101, 211, 0.734),
+    -3em -3em 0 0  rgba(84, 101, 211, 0.734),
+    3em -3em 0 0  rgba(84, 101, 211, 0.734),
+    -2em -2em 0 0  rgba(84, 101, 211, 0.734),
+    2em -2em 0 0  rgba(84, 101, 211, 0.734),
+    -3em -1em 0 0  rgba(84, 101, 211, 0.734),
+    -2em -1em 0 0  rgba(84, 101, 211, 0.734),
+    2em -1em 0 0  rgba(84, 101, 211, 0.734),
+    3em -1em 0 0  rgba(84, 101, 211, 0.734),
+    -4em 0 0 0  rgba(84, 101, 211, 0.734),
+    -3em 0 0 0  rgba(84, 101, 211, 0.734),
+    3em 0 0 0  rgba(84, 101, 211, 0.734),
+    4em 0 0 0  rgba(84, 101, 211, 0.734),
+    -5em 1em 0 0  rgba(84, 101, 211, 0.734),
+    -4em 1em 0 0  rgba(84, 101, 211, 0.734),
+    4em 1em 0 0  rgba(84, 101, 211, 0.734),
+    5em 1em 0 0  rgba(84, 101, 211, 0.734),
+    -5em 2em 0 0  rgba(84, 101, 211, 0.734),
+    5em 2em 0 0  rgba(84, 101, 211, 0.734),
+    -5em 3em 0 0  rgba(84, 101, 211, 0.734),
+    -3em 3em 0 0  rgba(84, 101, 211, 0.734),
+    3em 3em 0 0  rgba(84, 101, 211, 0.734),
+    5em 3em 0 0  rgba(84, 101, 211, 0.734),
+    -2em 4em 0 0  rgba(84, 101, 211, 0.734),
+    -1em 4em 0 0  rgba(84, 101, 211, 0.734),
+    1em 4em 0 0  rgba(84, 101, 211, 0.734),
+    2em 4em 0 0  rgba(84, 101, 211, 0.734);
+    background:  rgba(84, 101, 211, 0.734);
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    margin: 50px 0 70px 65px;
+    position: absolute;
+    -webkit-animation: moveX 18.74s linear 0s infinite alternate, moveY 25.06s linear 0s infinite alternate, spin 75300ms linear 0s infinite alternate;
+    -moz-animation: moveX 18.34s linear 0s infinite alternate, moveY 25.06s linear 0s infinite alternate, spin 75300ms linear 0s infinite alternate;
+    -o-animation: moveX 18.34s linear 0s infinite alternate, moveY 20.06s linear 0s infinite alternate, spin 45300ms linear 0s infinite alternate;
+    animation: moveX 18.34s linear 0s infinite alternate, moveY 20.06s linear 0s infinite alternate, spin 45300ms linear 0s infinite alternate;
+}
+
 .astronaut1{
     position: absolute;
     top: 18vmin;
