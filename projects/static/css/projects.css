@@ -425,13 +425,6 @@ box {
     height: 30vmin;
 }
 
-.spaceship1{
-    position: absolute;
-    top: 65vmin;
-    left: 167vmin;
-    height: 30vmin;
-}
-
 @-webkit-keyframes moveX {
   from { left: -15%; } to { left: 90%; }
 }
