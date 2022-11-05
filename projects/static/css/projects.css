@@ -418,11 +418,20 @@ box {
     animation: moveX 18.34s linear 0s infinite alternate, moveY 20.06s linear 0s infinite alternate, spin 45300ms linear 0s infinite alternate;
 }
 
-.astronaut1{
+.astronaut1 {
     position: absolute;
     top: 18vmin;
     left: 20vmin;
     height: 30vmin;
+}
+
+.rocketship {
+    width: 450px;
+    height: 450px;
+    transform: rotate(-33deg);
+    position: absolute;
+    top: 43vmin;
+    left: 146vmin;
 }
 
 @-webkit-keyframes moveX {
