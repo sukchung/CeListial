@@ -8,7 +8,7 @@ Django ORM manages the database models and queries, enabling seamless data retri
 
 ## Getting Started
 
-1. Clone this [repository](https://github.com/sukchung/CeListial.git) to your local computer
+1. Clone this [repository](https://github.com/sukchung/CeListial) to your local computer
 2. Navigate or cd into the cloned repository
 3. Run the following commands to activate your virtual environment
     ```
